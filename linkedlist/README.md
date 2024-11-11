@@ -24,10 +24,10 @@ use the head node to represent the whole list
 ```
 cur = Node(val)
 
-# 原本head會是None，因此是在最左邊的開頭（不是23喔，把它當作隱形的），head.next為23，指定給cur.next後
-# 再將head.next指定為新的開頭
-cur.next = head.next
-head.next = cur
+# cur.next要接上原先的head
+# 而head要變成cur本身，cur.next接上舊的head, 就成功插入cur進去head的最前面了
+cur.next = head
+head = cur
 
 ```
 
